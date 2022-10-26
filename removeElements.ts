@@ -4,16 +4,12 @@ function removeElement(nums: number[], val: number): number {
     if (nums[i] === val) {
       delete nums[i];
     }
+    if (!isNaN(nums[i])) {
+      count++;
+    }
   }
 
   nums.sort((a, b) => a - b);
-
-  for (let i = 0; i < nums.length; i++) {
-    if (isNaN(nums[i])) {
-      return count;
-    }
-    count++;
-  }
 
   return count;
 }
