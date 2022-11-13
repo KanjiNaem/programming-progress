@@ -86,6 +86,10 @@ class GenBinarysearchTree {
 
     return this.search(temp.right, value);
   }
+
+  public deleteTree() {
+    this.head = null;
+  }
 }
 
 // const rootNode = new GenTreeNode(50);
