@@ -1,11 +1,7 @@
 const isSum = (sum: number, k: number): boolean => {
   const numSet = createNumSet(sum, k);
 
-  if (subsetSum(numSet, numSet.length, sum)) {
-    // evil return true if true because return subsetSum doesnt work for some reason T _T
-    return true;
-  }
-  return false;
+  return subsetSum(numSet, numSet.length, sum) ? true : false; // evil return true if true because return subsetSum doesnt work for some reason T _T
 };
 
 const createNumSet = (sum: number, exp: number): number[] => {
