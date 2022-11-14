@@ -2,7 +2,6 @@ class GenTreeNode {
   public data: number;
   public left: GenTreeNode | null;
   public right: GenTreeNode | null;
-
   constructor(data: number) {
     this.data = data;
     this.left = null;
@@ -12,7 +11,6 @@ class GenTreeNode {
 
 class GenBinarysearchTree {
   public head: GenTreeNode | null;
-
   constructor(head?: GenTreeNode) {
     this.head = head || null;
   }
@@ -25,14 +23,11 @@ class GenBinarysearchTree {
       const root = new GenTreeNode(value);
       return root;
     }
-
     if (value < node.data) {
       node.left = this.insert(node.left, value);
       return node;
     }
-
     node.right = this.insert(node.right, value);
-
     return node;
   }
 
@@ -71,19 +66,9 @@ class GenBinarysearchTree {
     value: number
   ): GenTreeNode | null {
     let temp = node;
-
-    if (temp === null) {
-      return null;
-    }
-
-    if (temp.data === value) {
-      return temp;
-    }
-
-    if (value < temp.data) {
-      return this.search(temp.left, value);
-    }
-
+    if (temp === null) return null;
+    if (temp.data === value) return temp;
+    if (value < temp.data) return this.search(temp.left, value);
     return this.search(temp.right, value);
   }
 
