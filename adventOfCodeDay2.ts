@@ -1,4 +1,3 @@
-// var matchResult = () =>
 var gameArr = (s: string): string[] =>
   s
     .split("\n")
