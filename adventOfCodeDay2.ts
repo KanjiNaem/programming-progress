@@ -1,7 +1,6 @@
-var gameArr = (s: string): string[] => s.split("\n");
-
-function replaceGameState1(arr: string[]): number {
+function replaceGameState1(data: string): number {
   let score = 0;
+  const arr = data.split("\n");
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].charAt(2) === "X") {
       score += 1;
@@ -47,9 +46,9 @@ function replaceGameState1(arr: string[]): number {
   return score;
 }
 
-function replaceGameState2(arr: string[]): number {
+function replaceGameState2(data: string): number {
   let counter = 0;
-
+  const arr = data.split("\n");
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].charAt(2) === "Y") {
       counter += 3;
@@ -93,6 +92,5 @@ function replaceGameState2(arr: string[]): number {
   return counter;
 }
 
-// const matchArr = gameArr(input);
-// console.log(replaceGameState1(matchArr));
-// console.log(replaceGameState2(matchArr));
+// console.log(replaceGameState1(data));
+// console.log(replaceGameState2(data));
